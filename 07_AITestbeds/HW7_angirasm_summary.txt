@@ -1,0 +1,13 @@
+Summary of trainings: 27
+
+Cerebras: The impact of batch size (1024, 512, 2048) on performance was very small in terms of final Loss (7.07, 7.13, 7.15) and so the BERT training is doing similarly well. The difference is speed was notable (4844.72, 2901.31 , 6725.80) 
+samples per second respectively. This does not quite scale with the batch size (not doubling and halving respectively) and overall suggests that the base 1024 batch size is a good choice. 
+
+Graphcore: Training MNIST for 5 epochs instead of ten only reduced accuracy from 98.27% to 98.09%, so not a very big difference at all. Training using a learning rate an order of magnitude lower than the default was more impactful (accuracy of 97.86%). 
+However, all performances are still quite similar, so tuning epochs and learning rate further doesn't seem to be necessary at this point. 
+
+Groq: Changing the sequence length to a custom sequence length (256) instead of the dummy input (128) did not change the accuracy, but did change the latencies on CPU to be almost twice as long (so O(N)) scaling. In contrast, the groq based 
+model latencies were barely impacted and much much lower than CPU, showing substantially better robust performance. 
+
+Sambanova: Changing the number of tasks from 16 to 32 did not actually change the run time by as much as expected, perhaps because the number of cpus per task had to be adjusted? 
+ 

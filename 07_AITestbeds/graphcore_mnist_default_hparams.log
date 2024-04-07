@@ -1,0 +1,37 @@
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to /home/angirasm/.torch/datasets/MNIST/raw/train-images-idx3-ubyte.gz
+Extracting /home/angirasm/.torch/datasets/MNIST/raw/train-images-idx3-ubyte.gz to /home/angirasm/.torch/datasets/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to /home/angirasm/.torch/datasets/MNIST/raw/train-labels-idx1-ubyte.gz
+Extracting /home/angirasm/.torch/datasets/MNIST/raw/train-labels-idx1-ubyte.gz to /home/angirasm/.torch/datasets/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to /home/angirasm/.torch/datasets/MNIST/raw/t10k-images-idx3-ubyte.gz
+Extracting /home/angirasm/.torch/datasets/MNIST/raw/t10k-images-idx3-ubyte.gz to /home/angirasm/.torch/datasets/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to /home/angirasm/.torch/datasets/MNIST/raw/t10k-labels-idx1-ubyte.gz
+Extracting /home/angirasm/.torch/datasets/MNIST/raw/t10k-labels-idx1-ubyte.gz to /home/angirasm/.torch/datasets/MNIST/raw
+
+TrainingModelWithLoss(
+  (model): Network(
+    (layer1): Block(
+      (conv): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer2): Block(
+      (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer3): Linear(in_features=1600, out_features=128, bias=True)
+    (layer3_act): ReLU()
+    (layer3_dropout): Dropout(p=0.5, inplace=False)
+    (layer4): Linear(in_features=128, out_features=10, bias=True)
+    (softmax): Softmax(dim=1)
+  )
+  (loss): CrossEntropyLoss()
+)
+Accuracy on test set: 98.27%
